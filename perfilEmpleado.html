@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulceria JAJA</title>
+    <style>
+    body {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    /*Navegador Header*/
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 80px;
+    }
+
+    .navegador ul {
+        display: flex;
+        list-style: none;
+        gap: 40px;
+        padding: 0;
+        margin: 0;
+        font-size: large;
+    }
+
+    .navegador a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 45px;
+        width: 45px;
+    }
+
+    /*Es el titulo de empleado con su respectivo buscador*/
+    .contenidoBuscador {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 80px;
+    }
+
+    .inputConIcono {
+        position: relative;
+        display: flex;
+    }
+
+    .inputConIcono svg {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        color: #aaa;
+    }
+
+    .inputConIcono input {
+        width: 300px;
+        padding: 6px 10px 6px 35px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    /*Contenido general*/
+    .contenedor {
+        padding: 15px 80px;
+        display: flex;
+        gap: 80px;
+    }
+
+    /*Sidebar*/
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        background-color: #333232;
+        height: 100ch;
+        width: 250px;
+        padding: 20px;
+    }
+
+    .datosPrincipales {
+        justify-items: center;
+        color: white;
+        padding-top: 20px;
+    }
+
+    .datosPrincipales svg {
+        width: 70px;
+    }
+
+    .datosPrincipales h3 {
+        text-align: center;
+    }
+
+    .datosPrincipales h5{
+        background-color: rgb(45, 129, 255);
+        padding: 10px;
+        width: 100px;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    .sidebar2 {
+        padding-top: 90px;
+    }
+
+    .iconPerfilbutton {
+        display: flex;
+        color: white;
+        padding: 20px 20px;
+        align-items: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 250px;
+        font-size: inherit;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .iconPerfilbutton:hover {
+        background-color: #3f3e3e;
+    }
+
+    .iconPerfilbutton svg {
+        width: 20px;
+        padding-right: 15px;
+    }
+
+    /*Contenido de apartado datos empleado*/
+    /*.contenidoDatosEmpleado{
+    }*/
+
+    .content1 {
+        background-color: #e2e1e1;
+        width: 790px;
+        padding: 10px 10px;
+    }
+
+    .content1 table th {
+        text-align: left;
+        padding: 5px;
+        width: 200px;
+    }
+
+    .content2 {
+        background-color: #3f3e3e;
+        width: 760px;
+        padding: 10px 10px;
+        margin-top: 30px;
+        color: white;
+        padding-left: 40px;
+    }
+
+    .botonesDatosPersonales {
+        display: flex;
+        padding-top: 40px;
+        padding-left: 30%;
+        gap: 100px;
+    }
+
+    .botonesDatosPersonales button{
+        padding: 10px;
+        width: 100px;
+        background-color:  #e2e1e1;
+        color: black;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .botonesDatosPersonales button:hover{
+        background-color: #3f3e3e;
+        color: white;
+    }
+
+    /*Contenido de asistencia*/
+    .contenidoAsistencia {
+        display: none;
+    }
+
+    .content3 {
+        display: flex;
+        gap: 30px;
+    }
+
+    .content4{
+        background-color: #3f3e3e;
+        color: white;
+        padding: 10px;
+        height: 100px;
+        width: 280px;
+        text-align: center;
+    }
+
+    .content3 svg{
+        width: 100px;
+    }
+
+    .content5 {
+        display: flex;
+    }
+
+    .content5 svg{
+        width: 20px;
+        padding-left: 10px;
+    }
+
+    .content6 {
+        margin-top: 20px;
+        background-color: #f4f4f4;
+        padding: 10px;
+        border-radius: 5px;
+        width: 750px;
+    }
+
+    .content6 table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .content6 th, .content6 td {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .content6 th {
+        background-color: #e2e1e1;
+        color: #333;
+        font-weight: bold;
+    }
+
+    /*Contenido de recibo de nomina*/
+    .contenidoReciboNomina {
+        display: none;
+    }
+
+    .content7 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 270px;
+    }
+    
+    .inputConIcono {
+      position: relative;
+      display: flex;
+    }
+
+    .inputConIcono svg {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      color: #aaa;
+    }
+
+    .inputConIcono input {
+      width: 180px;
+      padding: 6px 10px 6px 35px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .tablaNomina{
+        width: 100%;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .tablaNomina th{
+        background-color: #f1f1f1;
+    }
+
+    .tablaNomina td {
+        text-align: left;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+          <div class="logo">
+            <img src="https://cdn.pixabay.com/photo/2022/12/29/17/14/candy-7685391_1280.png">
+            <h3>Dulcería JAJA</h3>
+          </div>
+          <div class="navegador">
+            <ul>
+                <li><a href="./empleados.html">Empleados</a></li>
+                <li><a href="./recibos.html">Recibos</a></li>
+                <li><a href="./asistencias.html">Asistencias</a></li>
+            </ul>
+          </div>
+        </div>
+    </header>
+    <div class="contenedor">
+        <div class="sidebar">
+            <div class="datosPrincipales"> 
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" clip-rule="evenodd" />
+                </svg>
+                <h3>Lucero Alhelí Pérez Estrada</h3>
+                <h5>Supervisor</h5>
+            </div>
+            <div class="sidebar2">
+                <button class="iconPerfilbutton">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                        <path fill-rule="evenodd" d="M4.5 3.75a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V6.75a3 3 0 0 0-3-3h-15Zm4.125 3a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Zm-3.873 8.703a4.126 4.126 0 0 1 7.746 0 .75.75 0 0 1-.351.92 7.47 7.47 0 0 1-3.522.877 7.47 7.47 0 0 1-3.522-.877.75.75 0 0 1-.351-.92ZM15 8.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15ZM14.25 12a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H15a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15Z" clip-rule="evenodd" />
+                    </svg>
+                    Datos De Empleado
+                </button>
+                <button class="iconPerfilbutton">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                        <path d="M4.5 3.75a3 3 0 0 0-3 3v.75h21v-.75a3 3 0 0 0-3-3h-15Z" />
+                        <path fill-rule="evenodd" d="M22.5 9.75h-21v7.5a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-7.5Zm-18 3.75a.75.75 0 0 1 .75-.75h6a.75.75 0 0 1 0 1.5h-6a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z" clip-rule="evenodd" />
+                    </svg>
+                    Recibos De Nómina
+                </button>
+                <button class="iconPerfilbutton">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z" clip-rule="evenodd" />
+                    </svg>
+                    Asistencias
+                </button>
+            </div>
+        </div>
+        <div class="contenidoDatosEmpleado">
+            <h1>Datos De Empleado</h1>
+            <div class="content1">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr><th>ID Empleado:</th><td>19</td></tr>
+                    <tr><th>Tipo de contrato:</th><td>Temporal</td></tr>
+                    <tr><th>Tipo de pago:</th><td>Quincenal</td></tr>
+                    <tr><th>CURP:</th><td>PEEL030319MNLRSCA7</td><tr>
+                    <tr><th>RFC:</th><td>VPNAJS9</td></tr>
+                    <tr><th>Número de Seguro Social:</th><td>12345678900</td></tr>
+                    <tr><th>Correo Electrónico:</th><td>lucero@example.com</td></tr>
+                    <tr><th>Teléfono:</th><td>555-123-4567</td></tr>
+                </table>
+            </div>            
+            <div class="content2">
+                <h1>Salario Base</h1>
+                <h4>$15,000 Pesos Mexicanos</h4>
+            </div>
+            <div class="botonesDatosPersonales">
+                <button>Editar</button>
+                <button>Eliminar</button>
+            </div>
+        </div>
+
+        <div class="contenidoAsistencia">
+            <h1>Asistencia</h1>
+            <h3>Horario laboral</h3>
+            <div class="content3">
+                <div class="content4">
+                    <h3>Hora de entrada</h3>
+                    <h4>7:00 am</h4>
+                </div>
+                <div class="content4">
+                    <h3>Hora de salida</h3>
+                    <h4>12:00 pm</h4>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M12 3.75a6.715 6.715 0 0 0-3.722 1.118.75.75 0 1 1-.828-1.25 8.25 8.25 0 0 1 12.8 6.883c0 3.014-.574 5.897-1.62 8.543a.75.75 0 0 1-1.395-.551A21.69 21.69 0 0 0 18.75 10.5 6.75 6.75 0 0 0 12 3.75ZM6.157 5.739a.75.75 0 0 1 .21 1.04A6.715 6.715 0 0 0 5.25 10.5c0 1.613-.463 3.12-1.265 4.393a.75.75 0 0 1-1.27-.8A6.715 6.715 0 0 0 3.75 10.5c0-1.68.503-3.246 1.367-4.55a.75.75 0 0 1 1.04-.211ZM12 7.5a3 3 0 0 0-3 3c0 3.1-1.176 5.927-3.105 8.056a.75.75 0 1 1-1.112-1.008A10.459 10.459 0 0 0 7.5 10.5a4.5 4.5 0 1 1 9 0c0 .547-.022 1.09-.067 1.626a.75.75 0 0 1-1.495-.123c.041-.495.062-.996.062-1.503a3 3 0 0 0-3-3Zm0 2.25a.75.75 0 0 1 .75.75c0 3.908-1.424 7.485-3.781 10.238a.75.75 0 0 1-1.14-.975A14.19 14.19 0 0 0 11.25 10.5a.75.75 0 0 1 .75-.75Zm3.239 5.183a.75.75 0 0 1 .515.927 19.417 19.417 0 0 1-2.585 5.544.75.75 0 0 1-1.243-.84 17.915 17.915 0 0 0 2.386-5.116.75.75 0 0 1 .927-.515Z" clip-rule="evenodd" />
+                </svg>                  
+            </div>
+            <div>
+                <div class="content5">
+                    <h3>Historial</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>                      
+                </div>
+                <div class="content6">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Hora de entrada</th>
+                                <th>Hora de salida</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>24/10/2025</td>
+                                <td>7:01 am</td>
+                                <td>12:50 pm</td>
+                            </tr>
+                            <tr>
+                                <td>23/10/2025</td>
+                                <td>7:10 am</td>
+                                <td>12:20 pm</td>
+                            </tr>
+                            <tr>
+                                <td>22/10/2025</td>
+                                <td>7:30 am</td>
+                                <td>12:20 pm</td>
+                            </tr>
+                            <tr>
+                                <td>21/10/2025</td>
+                                <td>7:01 am</td>
+                                <td>12:50 pm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>                
+            </div>
+        </div>
+        <div class="contenidoReciboNomina">
+            <div class="content7">
+                <h1>Recibo de Nómina</h1>
+                <div class="inputConIcono">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd"/>
+                    </svg>
+                    <input type="text" placeholder="Buscar Fecha Pago">
+                </div>
+            </div>
+            <table class="tablaNomina">
+                <thead>
+                    <tr>
+                        <th colspan="4">
+                            <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+                                <img src="https://cdn.pixabay.com/photo/2022/12/29/17/14/candy-7685391_1280.png" style="height: 40px;">
+                                <h3 style="margin: 0;">Dulcería JAJA</h3>
+                            </div>
+                        </th>
+                    </tr>
+                    <div class="datosPersonales">
+                        <tr>
+                            <th>Nombre completo</th><td>Lucero Alhelí Pérez Estrada</td>
+                            <th>ID Empleado</th><td>19</td>
+                        </tr>
+                        <tr>
+                            <th>CURP</th><td>PEEL030319MNLRSCA7</td><th>RFC</th><td>VPNAJS9</td>
+                        </tr>
+                        <tr>
+                            <th>Puesto</th><td>Supervisor</td>
+                            <th>Tipo de Contrato</th><td>Temporal</td>
+                        </tr>
+                    </div>
+                </thead>
+                <tbody>
+                    <div class="periodoPago">
+                        <tr>
+                            <th>Fecha de Pago</th><td>15/04/2025</td>
+                        </tr>
+                        <tr>
+                            <th>Periodo Cubierto</th><td>01/04/2025 al 15/04/2025</td></tr>
+                        <tr>
+                            <th>Tipo de Pago</th><td>Quincenal</td>
+                        </tr>
+                    </div>
+                    <div class="detallePercepciones">
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Cantidad</th>
+                        </tr>
+                        <tr>
+                            <td>Salario Base</td>
+                            <td>$10,000.00 pesos mexicanos</td>
+                        </tr>
+                        <tr>
+                            <td>Horas Extras</td>
+                            <td>0 horas extra</td>
+                        </tr>
+                        <tr>
+                            <td>Pago Festivo</td>
+                            <td>$0.00 pesos mexicanos</td>
+                        </tr>
+                        <tr>
+                            <td>Bonos</td>
+                            <td>$2,000.00 pesos mexicanos</td>
+                        </tr>
+                        <tr>
+                            <td>Comisiones</td>
+                            <td>$0.00 pesos mexicanos</td>
+                        </tr>
+                    </div>
+                    <div class="detalleLaboral">
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Valor</th>
+                        </tr>
+                        <tr>
+                            <td>Total Horas Trabajadas</td>
+                            <td>80 horas</td>
+                        </tr>
+                        <tr>
+                            <td>Horas Extra</td>
+                            <td>0 horas</td>
+                        </tr>
+                        <tr>
+                            <td>Retardo (minutos)</td>
+                            <td>0 minutos</td>
+                        </tr>
+                        <tr>
+                            <td>Faltas</td>
+                            <td>0 faltas</td>
+                        </tr>
+                        <tr>
+                            <td>Días Festivos Trabajados</td>
+                            <td>0 días</td>
+                        </tr>
+                    </div>
+                    <div class="deducciones">
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Cantidad</th>
+                        </tr>
+                        <tr>
+                            <td>Descuento por Retardos</td>
+                            <td>$0.00 pesos mexicanos</td>
+                        </tr>
+                        <tr>
+                            <td>Descuento por Faltas</td>
+                            <td>$0.00 pesos mexicanos</td>
+                        </tr>
+                        <tr>
+                            <td>ISR</td>
+                            <td>$1,740.00 pesos mexicanos</td>
+                        </tr>
+                        <tr>
+                            <td>IMSS</td>
+                            <td>$260.00 pesos mexicanos</td>
+                        </tr>  
+                    </div>
+                    <div class="resumenFinal">
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Cantidad</th>
+                        </tr>
+                        <tr>
+                            <td class="bold">Subtotal</td>
+                            <td class="bold">$12,000.00 pesos mexicanos</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Total Deducciones</td>
+                            <td class="bold">$2,000.00 pesos mexicanos</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Total Neto a Pagar</td>
+                            <td class="bold">$10,000 pesos mexicanos</td>
+                        </tr>        
+                    </div>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>

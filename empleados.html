@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dulcería JAJA</title>
+  <link rel="stylesheet" href="./diseño.css">
+  <style>
+    body {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 80px;
+    }
+
+    .navegador ul {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+      padding: 0;
+      margin: 0;
+      font-size: large;
+    }
+
+    .navegador a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 45px;
+      width: 45px;
+    }
+
+    .contenidoBuscador {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 80px;
+    }
+
+    .inputConIcono {
+      position: relative;
+      display: flex;
+    }
+
+    .inputConIcono svg {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      color: #aaa;
+    }
+
+    .inputConIcono input {
+      width: 300px;
+      padding: 6px 10px 6px 35px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .empleados {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px 80px;
+    }
+
+    .nombreEmpleado {
+      display: flex;
+      align-items: center;
+      background-color: rgb(243, 241, 241);
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .nombreEmpleado svg {
+      width: 30px;
+      margin-right: 10px;
+    }
+
+    .nombreEmpleado button {
+      background: none;
+      border: none;
+      color: black;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 0;
+    }
+
+    .nombreEmpleado button:hover {
+      text-decoration: underline;
+    }
+
+    #perfilEmpleado {
+      display: none;
+      padding: 20px 80px;
+      background-color: #f2f2f2;
+      border-top: 2px solid #ccc;
+    }
+
+    #perfilEmpleado button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #perfilEmpleado button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="https://cdn.pixabay.com/photo/2022/12/29/17/14/candy-7685391_1280.png">
+        <h3>Dulcería JAJA</h3>
+      </div>
+      <div class="navegador">
+        <ul>
+          <li><a href="./empleados.html">Empleados</a></li>
+          <li><a href="./recibos.html">Recibos</a></li>
+          <li><a href="./asistencias.html">Asistencias</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="contenido">
+    <div class="contenidoBuscador">
+      <h1>Empleados</h1>
+      <div class="inputConIcono">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+          <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd"/>
+        </svg>
+        <input type="text" id="buscadorEmpleado" placeholder="Buscar empleado">
+      </div>
+    </div>
+
+    <div class="empleados" id="listaEmpleados">
+      <!-- Los empleados se generarán aquí por JS -->
+    </div>
+
+    <div id="perfilEmpleado">
+      <h2 id="nombrePerfil"></h2>
+      <p>Aquí puedes diseñar toda la interfaz personalizada para este empleado.</p>
+      <button onclick="cerrarPerfil()">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    const empleados = [
+      "Lucero Alhelí Pérez Estrada",
+      "Juan Pérez García",
+      "María José Ramírez",
+      "Carlos Rodríguez García",
+      "Pedro Pérez López",
+      "Ana García Martínez",
+      "Luis Hernández Gómez",
+      "Miguel Ángel Díaz",
+      "Isabel Torres Sánchez",
+      "José Luis Martínez"
+    ];
+
+    const lista = document.getElementById("listaEmpleados");
+    const buscadorEmpleado = document.getElementById("buscadorEmpleado");
+
+    function mostrarEmpleados(empleados) {
+      lista.innerHTML = '';  // Limpiar la lista antes de mostrar los empleados
+
+      empleados.forEach(nombre => {
+        const div = document.createElement("div");
+        div.className = "nombreEmpleado";
+        div.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" clip-rule="evenodd" />
+          </svg>
+          <button onclick="mostrarPerfil('${nombre}')">${nombre}</button>
+        `;
+        lista.appendChild(div);
+      });
+    }
+
+    function mostrarPerfil(nombre) {
+      document.getElementById("perfilEmpleado").style.display = "block";
+      document.getElementById("nombrePerfil").textContent = nombre;
+    }
+
+    function cerrarPerfil() {
+      document.getElementById("perfilEmpleado").style.display = "none";
+    }
+
+    // Filtrar empleados según la búsqueda
+    buscadorEmpleado.addEventListener("input", function() {
+      const query = buscadorEmpleado.value.toLowerCase();
+      const empleadosFiltrados = empleados.filter(nombre => nombre.toLowerCase().includes(query));
+      mostrarEmpleados(empleadosFiltrados);
+    });
+
+    // Mostrar todos los empleados inicialmente
+    mostrarEmpleados(empleados);
+  </script>
+</body>
+</html>

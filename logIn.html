@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dulceria JAJA</title>
+  <style>
+    body {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 45px;
+      width: 45px;
+    }
+
+    .contenido {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      padding: 100px;
+    }
+
+    .contenidoInput {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .inputConIcono {
+      position: relative;
+    }
+
+    .inputConIcono svg {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      color: gray;
+    }
+
+    .inputConIcono input {
+      width: 100%;
+      padding: 10px 3px 10px 40px; /* espacio para el icono */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contenido button {
+      margin-left: 40px;
+      color: white;
+      background-color: darkblue;
+      padding: 10px 30px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .contenido button:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .contenido h1 {
+      color: darkblue;
+      font-size: 40px;
+      margin-left: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://cdn.pixabay.com/photo/2022/12/29/17/14/candy-7685391_1280.png" alt="Logo">
+      <h3>Dulceria JAJA</h3>
+    </div>
+  </header>
+
+  <div class="contenido">
+    <h1>Dulceria JAJA</h1>
+    <div class="contenidoInput">
+      <div class="inputConIcono">
+        <!-- Icono de usuario -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
+        </svg>              
+        <input type="text" placeholder="Usuario">
+      </div>
+
+      <div class="inputConIcono">
+        <!-- Icono de candado -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z" clip-rule="evenodd" />
+        </svg>              
+        <input type="password" placeholder="Contraseña">
+      </div>
+    </div>
+    <button>Ingresar</button>
+  </div>   
+</body>
+</html>
