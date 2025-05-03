@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulceria JAJA</title>
+    <style>
+    body {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 80px;
+    }
+
+    .navegador ul {
+        display: flex;
+        list-style: none;
+        gap: 40px;
+        padding: 0;
+        margin: 0;
+        font-size: large;
+    }
+
+    .navegador a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 45px;
+        width: 45px;
+    }
+
+    .contenedor {
+        background-color: #cfcfcf5e;
+        margin-left: 70px;
+        margin-right: 70px;
+        padding: 20px;
+        border-radius: 4px;
+        height: 450px;
+        justify-items: center;
+        margin-top: 20px;
+    }
+
+    .contenedor button{
+        color: white;
+        background-color: #333;
+        padding: 15px 15px 15px 15px;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 15px;
+        width: 300px;
+    }
+
+    .contenedor select{
+        padding: 15px 15px 15px 15px; /* espacio para el icono */
+        border-radius: 4px;
+        color: #747474;
+        width: 300px;
+    }
+
+    .data{
+        display: grid;
+        padding: 20px;
+        gap: 20px;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+          <div class="logo">
+            <img src="https://cdn.pixabay.com/photo/2022/12/29/17/14/candy-7685391_1280.png">
+            <h3>Dulcería JAJA</h3>
+          </div>
+          <div class="navegador">
+            <ul>
+                <li><a href="./registros.html">Registros</a></li>
+                <li><a href="./empleados.html">Empleados</a></li>
+                <li><a href="./recibos.html">Recibos</a></li>
+                <li><a href="./asistencias.html">Asistencias</a></li>
+            </ul>
+          </div>
+        </div>
+    </header>
+    <div class="contenedor">
+        <h1>Registro de empleado</h1>
+        <div class="data">
+            <select id="empleado" name="empleado">
+                <option value="">Selecciona Empleado</option>
+                <option value="lucero_perez">Lucero Alhelí Pérez Estrada</option>
+                <option value="juan_perez">Juan Pérez García</option>
+                <option value="maria_ramirez">María José Ramírez</option>
+                <option value="carlos_rodriguez">Carlos Rodríguez García</option>
+                <option value="pedro_perez">Pedro Pérez López</option>
+                <option value="ana_garcia">Ana García Martínez</option>
+                <option value="luis_hernandez">Luis Hernández Gómez</option>
+                <option value="miguel_diaz">Miguel Ángel Díaz</option>
+                <option value="isabel_torres">Isabel Torres Sánchez</option>
+                <option value="jose_martinez">José Luis Martínez</option>
+            </select> 
+            <button>Marcar Hora de Entrada</button>
+            <button>Marcar Hora de Salida</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulceria JAJA</title>
+    <style>
+    body {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 80px;
+    }
+
+    .navegador ul {
+        display: flex;
+        list-style: none;
+        gap: 40px;
+        padding: 0;
+        margin: 0;
+        font-size: large;
+    }
+
+    .navegador a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 45px;
+        width: 45px;
+    }
+
+    .contenidoBuscador {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 80px;
+    }
+
+    .inputConIcono {
+        position: relative;
+        display: flex;
+    }
+
+    .inputConIcono svg {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        color: #aaa;
+    }
+
+    .inputConIcono input {
+        width: 300px;
+        padding: 6px 10px 6px 35px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    /*Contenido*/
+    .contenedor {
+        background-color: #cfcfcf5e;
+        margin-left: 70px;
+        margin-right: 70px;
+        padding: 20px;
+        border-radius: 4px;
+        height: 500px;
+    }
+
+    .contenedor h1{
+        text-align: center;
+    }
+
+    .inputInfo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 2 columnas iguales */
+        gap: 30px 70px; /* 30px entre filas, 70px entre columnas */
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .inputInfo input{
+        padding: 8px 3px 10px 10px; /* espacio para el icono */
+        border-radius: 4px;
+    }
+
+    .inputInfo select{
+        padding: 8px 3px 10px 10px; /* espacio para el icono */
+        border-radius: 4px;
+        color: #747474;
+    }
+
+    .contenedor button{
+        color: white;
+        background-color: #333;
+        padding: 15px 15px 15px 15px;
+        border-radius: 4px;
+        margin-left: 45%;
+        font-weight: bold;
+        margin-top: 20px;
+        font-size: 15px;
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+          <div class="logo">
+            <img src="https://cdn.pixabay.com/photo/2022/12/29/17/14/candy-7685391_1280.png">
+            <h3>Dulcería JAJA</h3>
+          </div>
+          <div class="navegador">
+            <ul>
+                <li><a href="./registros.html">Registros</a></li>
+                <li><a href="./empleados.html">Empleados</a></li>
+                <li><a href="./recibos.html">Recibos</a></li>
+                <li><a href="./asistencias.html">Asistencias</a></li>
+            </ul>
+          </div>
+        </div>
+    </header>
+    <div class="contenedor">
+        <h1>Alta de empleado</h1>
+        <div class="inputInfo">
+            <input type="text" placeholder="Ingresa Nombre">
+            <select id="puesto" name="puesto">
+                <option value="">Selecciona Puesto</option>
+                <option value="administrativo">Administrativo</option>
+                <option value="tecnico">Técnico</option>
+                <option value="operativo">Operativo</option>
+                <option value="supervisor">Supervisor</option>
+                <option value="gerencial">Gerencial</option>
+                <option value="direccion">Dirección</option>
+                <option value="otro">Otro</option>
+            </select>
+            <select id="contrato" name="contrato">
+                <option value="">Selecciona Tipo de Contrato</option>
+                <option value="indefinido">Tiempo indefinido</option>
+                <option value="determinado">Tiempo determinado</option>
+                <option value="obra">Por obra o proyecto</option>
+                <option value="prueba">Periodo de prueba</option>
+                <option value="capacitacion">Capacitación inicial</option>
+                <option value="temporal">Por temporada</option>
+                <option value="parcial">Medio tiempo</option>
+                <option value="honorarios">Por honorarios</option>
+            </select>
+            <input type="text" placeholder="Ingresa Tipo de Pago">
+            <input type="text" placeholder="Ingresa CURP">
+            <input type="text" placeholder="Ingresa RFC">
+            <input type="text" placeholder="Ingresa NSS">
+            <input type="text" placeholder="Ingresa Correo Electrónico">
+            <input type="text" placeholder="Ingresa Teléfono">
+            <input type="text" placeholder="Ingresa Salario Base">
+            <select id="hora" name="hora">
+                <option value="">Selecciona Hora de Entrada</option>
+                <option value="00:00">00:00</option>
+                <option value="01:00">01:00</option>
+                <option value="02:00">02:00</option>
+                <option value="03:00">03:00</option>
+                <option value="04:00">04:00</option>
+                <option value="05:00">05:00</option>
+                <option value="06:00">06:00</option>
+                <option value="07:00">07:00</option>
+                <option value="08:00">08:00</option>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+                <option value="18:00">18:00</option>
+                <option value="19:00">19:00</option>
+                <option value="20:00">20:00</option>
+                <option value="21:00">21:00</option>
+                <option value="22:00">22:00</option>
+                <option value="23:00">23:00</option>
+              </select>
+              <select id="hora" name="hora">
+                <option value="">Selecciona Hora de Salida</option>
+                <option value="00:00">00:00</option>
+                <option value="01:00">01:00</option>
+                <option value="02:00">02:00</option>
+                <option value="03:00">03:00</option>
+                <option value="04:00">04:00</option>
+                <option value="05:00">05:00</option>
+                <option value="06:00">06:00</option>
+                <option value="07:00">07:00</option>
+                <option value="08:00">08:00</option>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+                <option value="18:00">18:00</option>
+                <option value="19:00">19:00</option>
+                <option value="20:00">20:00</option>
+                <option value="21:00">21:00</option>
+                <option value="22:00">22:00</option>
+                <option value="23:00">23:00</option>
+              </select>
+        </div>
+        <button>Registrar empleado</button>
+    </div>
+</body>
+</html>

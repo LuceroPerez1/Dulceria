@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dulcería JAJA</title>
-  <link rel="stylesheet" href="./diseño.css">
   <style>
     body {
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -80,6 +79,13 @@
       padding: 20px 80px;
     }
 
+    .agregaEmpleado a{
+      font-size: 20px;
+      padding-left: 80px;
+      color: darkblue;
+      text-decoration: none;
+    }
+
     .nombreEmpleado {
       display: flex;
       align-items: center;
@@ -137,6 +143,7 @@
       </div>
       <div class="navegador">
         <ul>
+          <li><a href="./registros.html">Registros</a></li>
           <li><a href="./empleados.html">Empleados</a></li>
           <li><a href="./recibos.html">Recibos</a></li>
           <li><a href="./asistencias.html">Asistencias</a></li>
@@ -155,7 +162,9 @@
         <input type="text" id="buscadorEmpleado" placeholder="Buscar empleado">
       </div>
     </div>
-
+    <div class="agregaEmpleado">
+      <a href="./nuevoEmpleado.html">Agregar empleado</a>
+    </div>
     <div class="empleados" id="listaEmpleados">
       <!-- Los empleados se generarán aquí por JS -->
     </div>

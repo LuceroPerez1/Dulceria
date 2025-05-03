@@ -303,6 +303,7 @@
           </div>
           <div class="navegador">
             <ul>
+                <li><a href="./registros.html">Registros</a></li>
                 <li><a href="./empleados.html">Empleados</a></li>
                 <li><a href="./recibos.html">Recibos</a></li>
                 <li><a href="./asistencias.html">Asistencias</a></li>
@@ -320,20 +321,20 @@
                 <h5>Supervisor</h5>
             </div>
             <div class="sidebar2">
-                <button class="iconPerfilbutton">
+                <button class="iconPerfilbutton" onclick="mostrarContenido('datosPersonales')">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                         <path fill-rule="evenodd" d="M4.5 3.75a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V6.75a3 3 0 0 0-3-3h-15Zm4.125 3a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Zm-3.873 8.703a4.126 4.126 0 0 1 7.746 0 .75.75 0 0 1-.351.92 7.47 7.47 0 0 1-3.522.877 7.47 7.47 0 0 1-3.522-.877.75.75 0 0 1-.351-.92ZM15 8.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15ZM14.25 12a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H15a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15Z" clip-rule="evenodd" />
                     </svg>
                     Datos De Empleado
                 </button>
-                <button class="iconPerfilbutton">
+                <button class="iconPerfilbutton" onclick="mostrarContenido('reciboNomina')">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                         <path d="M4.5 3.75a3 3 0 0 0-3 3v.75h21v-.75a3 3 0 0 0-3-3h-15Z" />
                         <path fill-rule="evenodd" d="M22.5 9.75h-21v7.5a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-7.5Zm-18 3.75a.75.75 0 0 1 .75-.75h6a.75.75 0 0 1 0 1.5h-6a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z" clip-rule="evenodd" />
                     </svg>
                     Recibos De Nómina
                 </button>
-                <button class="iconPerfilbutton">
+                <button class="iconPerfilbutton" onclick="mostrarContenido('asistencia')">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                         <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z" clip-rule="evenodd" />
                     </svg>
@@ -341,7 +342,7 @@
                 </button>
             </div>
         </div>
-        <div class="contenidoDatosEmpleado">
+        <div class="contenidoDatosEmpleado" id="datosPersonales">
             <h1>Datos De Empleado</h1>
             <div class="content1">
                 <table style="width: 100%; border-collapse: collapse;">
@@ -365,7 +366,7 @@
             </div>
         </div>
 
-        <div class="contenidoAsistencia">
+        <div class="contenidoAsistencia" id="asistencia">
             <h1>Asistencia</h1>
             <h3>Horario laboral</h3>
             <div class="content3">
@@ -423,7 +424,7 @@
                 </div>                
             </div>
         </div>
-        <div class="contenidoReciboNomina">
+        <div class="contenidoReciboNomina" id="reciboNomina">
             <div class="content7">
                 <h1>Recibo de Nómina</h1>
                 <div class="inputConIcono">
@@ -478,10 +479,6 @@
                             <td>$10,000.00 pesos mexicanos</td>
                         </tr>
                         <tr>
-                            <td>Horas Extras</td>
-                            <td>0 horas extra</td>
-                        </tr>
-                        <tr>
                             <td>Pago Festivo</td>
                             <td>$0.00 pesos mexicanos</td>
                         </tr>
@@ -498,6 +495,10 @@
                         <tr>
                             <th>Descripción</th>
                             <th>Valor</th>
+                        </tr>
+                        <tr>
+                            <td>Total Días Trabajados</td>
+                            <td>20 días</td>
                         </tr>
                         <tr>
                             <td>Total Horas Trabajadas</td>
@@ -564,6 +565,16 @@
             </table>
         </div>
     </div>
-    
+    <script>
+        function mostrarContenido(idContenido) {
+            // Primero, ocultar todos
+            document.getElementById('datosPersonales').style.display = 'none';
+            document.getElementById('asistencia').style.display = 'none';
+            document.getElementById('reciboNomina').style.display = 'none';
+        
+            // Luego, mostrar solo el que corresponde
+            document.getElementById(idContenido).style.display = 'block';
+        }
+    </script>        
 </body>
 </html>
